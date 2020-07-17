@@ -1,0 +1,39 @@
+Para resolver el ejercicio de corrector de examen se tienen las siguientes clases:
+
+Alumno: Es quien instancia cada examen.
+
+ExamenFactory: En esta clase se definen las preguntas, nota de aprobacion y criterio de la nota.
+ Por ejemplo esta clase seria la que instanciaria un profesor y le cargaria lo necesario,
+para que luego cuando el alumno decida hacer el examen se cree una instancia de examen con los valores seteados por el profesor.
+
+Examen: Es una clase que se instancia cada vez que un alumno se pone a resolver un examen, en este recibe las respuestas de cada pregunta
+y se las pasa a cada una para ver si esta es correcta. Tiene el criterio que decide la nota final del examen y la nota que se necesita para
+aprobar, con estos verifica si esta o no aprobado.
+
+Criterio: Interfaz que define que un criterio debe tener un metodo que devuelva la nota final.
+
+Regla de 3: Este criterio determina la nota usando una regla de 3 simples entre la suma total de puntos por pregunta, y una escala entre
+10 y 1.
+
+RestarPuntos: Este criterio determina la nota teniendo una valor que se resta al total de puntos sumados.
+
+Tabla: Este criterio determina la nota usando una tabla para determinar la equibalencia entre puntos.
+
+Promedio: Este criterio determina la nota usando el promedio entre las notas determinadas por los criterios que posee.
+
+NotaMasAlta: Igual que Promedio posee n criterios, y la nota la determina tomando la nota mas alta de todos esos criterios.
+
+Pregunta: La pregunta tiene el peso de la misma, que luego se utilizara para determinar la nota total. Tambien posee un Tipo, que determina
+el tipo de pregunta que es y como se corrige la misma. Tiene los metodos responder que recibe la respuesta. Y un metodo que devuelve si esta 
+correcta o no.
+
+TipoDePregunta: Interfaz que define un tipo de pregunta que tiene los metodos responder y Estado.
+
+VoF: En este tipo de pregunta se tiene respuesta correcta(true o false) y el metodo Responder recibe la respuesta del alumno y cambia el 
+estado dependiendo si esta bien o no.
+
+Multiple choice: En este tipo de pregunta se tiene una lista de opciones, y la posicion de la correcta y el metodo Responder recibe la 
+respuesta del alumno, que es la posicion en la lista de la correcta, cambia el estado dependiendo si esta bien o no.
+
+RespestaCorrecta: En este tipo de pregunta se tiene respuesta correcta y el metodo Responder recibe la respuesta del alumno y cambia el 
+estado dependiendo si esta bien o no.
